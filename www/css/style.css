@@ -1,0 +1,17 @@
+/* Empty. Add your own CSS if you like */
+.centered{
+    margin: 0 auto;
+    text-align: center;
+}
+.red.text{
+    color: red;
+}
+.green.text{
+    color: green;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}

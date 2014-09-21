@@ -1,0 +1,37 @@
+<ion-view title="Dashboard">
+  <ion-content class="padding">
+
+    <div id="map"></div>
+
+    <ion-list>
+        <div class="list card" ng-repeat="item in items">
+
+          <div class="item item-avatar">
+            <img ng-src="img/anon.png">
+
+            <div class="left">
+                <h2>{{item.title}} • {{item.location.latitude}} {{item.location.longitude}}</h2>
+                <p>{{item.description}}</p>
+            </div>
+            <div class="right">
+              <p>{{item.timestamp || 'just now'}}</p>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="item item-image">
+            <img ng-src="http://vocaleyesapp.org/v1/images/{{item.image._id}}">
+          </div>
+
+          <a class="item item-icon-left positive" href="#">
+            <i class="icon ion-share"></i>
+            Share
+          </a>
+
+        </div>
+    </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

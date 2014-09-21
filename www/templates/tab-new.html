@@ -1,0 +1,43 @@
+<ion-view title="Publish" ng-model="newItem">
+  <ion-content class="has-header padding" >
+
+    <div class="list" ng-model="newItem">
+
+      <div class="item item-image">
+        <img src="" id="last-photo-taken">
+      </div>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Location</span>
+        <div id="location" ng-model="newItem">{{newItem.location.latitude}} {{newItem.location.longitude}}</div>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="Leaking fire hydrant" ng-model="newItem.title">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Description</span>
+        <input type="text" placeholder="This fire hydrant is gushing badly" ng-model="newItem.description">
+      </label>
+
+      <label class="item item-radio">
+        <input type="radio" ng-model="newItem.isNegative" value="0">
+        <div class="item-content">
+          <i class="icon ion-alert-circled"></i> Mark as Issue
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-radio">
+        <input type="radio" ng-model="newItem.isNegative" value="1">
+        <div class="item-content">
+          <i class="icon ion-ribbon-b"></i> Mark as Praise
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+
+
+    <button class="button button-full button-balanced" ng-click="publishPhoto()">Publish</button>
+
+  </ion-content>
+</ion-view>
