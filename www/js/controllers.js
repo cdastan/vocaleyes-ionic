@@ -7,7 +7,7 @@ angular.module('starter.controllers', ['ngResource',])
 .controller('AccountCtrl', function($scope) {
 })
 
-.controller('NewCtrl', function($scope, $resource) {
+.controller('NewCtrl', function($scope, $resource, $ionicPopup, $state) {
 
     $scope.taken = false;
 
@@ -61,11 +61,25 @@ angular.module('starter.controllers', ['ngResource',])
 
     }
 
+
+    $scope.showAlert = function() {
+       var alertPopup = $ionicPopup.alert({
+         title: 'Alright',
+         template: 'Your item has been published'
+       });
+       alertPopup.then(function(res) {
+         $state.go('tab.local')
+       });
+     };
+
     // Publish the photo to remote server
     $scope.publishPhoto = function(){
         var url = 'http://vocaleyesapp.org/v1/items';
         var r = $resource(url);
+        console.log('R is', r);
         r.save($scope.newItem);
+        $scope.showAlert();
+        $scope.newItem = {};
     }
 
     $scope.takePhoto()
